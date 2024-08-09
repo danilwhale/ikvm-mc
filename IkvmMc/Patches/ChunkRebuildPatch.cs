@@ -13,7 +13,7 @@ public sealed class ChunkRebuildPatch
     private static FieldInfo _rockTileField = AccessTools.Field(typeof(Tile), "rock");
     
     [HarmonyTranspiler]
-    private static IEnumerable<CodeInstruction> RebuildTranspiler(IEnumerable<CodeInstruction> instructions)
+    private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
     {
         var found = false;
 
