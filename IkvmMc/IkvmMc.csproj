@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="IKVM" Version="8.9.1" />
+      <PackageReference Include="Lib.Harmony.Thin" Version="2.3.3" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <IkvmReference Include="jinput-2.0.5.jar"/>
+        <IkvmReference Include="lwjgl-2.9.0.jar">
+            <References>jinput-2.0.5.jar</References>
+        </IkvmReference>
+        <IkvmReference Include="lwjgl_util-2.9.0.jar">
+            <References>lwjgl-2.9.0.jar</References>
+        </IkvmReference>
+        
+        <IkvmReference Include="rd-132211.jar">
+            <References>jinput-2.0.5.jar;lwjgl-2.9.0.jar;lwjgl_util-2.9.0.jar</References>
+        </IkvmReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="runtimes/**">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+</Project>
